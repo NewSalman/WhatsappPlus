@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhatAppPlus.Views.HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Whatsapp" Order="Primary" Priority="0"/>
+        <ToolbarItem IconImageSource="more.png" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <CollectionView ItemsSource="{Binding ContactSource}" SelectedItem="{Binding ChatSelectedItems, Mode=TwoWay}" 
+                             SelectionMode="Single" SelectionChanged="ItemSelectionChange">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="0" Margin="0">
+                            <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="White">
+                                <Frame Padding="0, 0, 10, 0" Margin="0" CornerRadius="180">
+                                    <Image Source="{Binding ContactImage}" HeightRequest="60" WidthRequest="60"/>
+                                </Frame>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Username}" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding LatestMessage}" FontSize="16" TextColor="LightGray"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

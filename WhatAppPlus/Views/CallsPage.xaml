@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhatAppPlus.Views.CallsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="more.png" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <CollectionView ItemsSource="{Binding CallSource}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" Padding="10" Margin="0">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Padding="0, 0, 10, 0" Margin="0" CornerRadius="180">
+                                    <Image Source="user.png" HeightRequest="60" WidthRequest="60"/>
+                                </Frame>
+                                <StackLayout VerticalOptions="FillAndExpand">
+                                    <Label Text="{Binding Username}" FontSize="20" TextColor="Black"/>
+                                    <Label Text="{Binding Condition}" FontSize="12"/>
+                                    <Label Text="{Binding Type, StringFormat='Type: {0}'}" FontSize="12"/>
+                                </StackLayout>
+                                <Image Source="{Binding IconCall}" HeightRequest="60" WidthRequest="60" HorizontalOptions="EndAndExpand" 
+                                       VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

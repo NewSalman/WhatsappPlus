@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WhatAppPlus.Views"
+             x:Class="WhatAppPlus.Views.Navigation.TabShell">
+    <NavigationPage Title="CHAT">
+        <x:Arguments>
+            <local:HomePage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="STATUS">
+        <x:Arguments>
+            <local:StatusPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="PANGGILAN">
+        <x:Arguments>
+            <local:CallsPage/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>
